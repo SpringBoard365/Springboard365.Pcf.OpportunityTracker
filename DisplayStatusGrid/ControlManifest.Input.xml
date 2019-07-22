@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Springboard365" constructor="DisplayStatusGrid" version="1.0.0" display-name-key="DisplayStatus_Display_Key" description-key="DisplayStatus_Desc_Key" control-type="standard">
+    <type-group name="textTypes">
+      <type>SingleLine.Text</type>
+      <type>Multiple</type>
+    </type-group>
+    <property name="jsonGrid" display-name-key="JsonGridProperty_Display_Key" description-key="JsonGridProperty_Desc_Key" of-type-group="textTypes" usage="bound" required="true" />    
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/main.css" order="1" />
+      <resx path="strings/DisplayStatusGrid.1033.resx" version="1.0.0" />
+    </resources>
+  </control>
+</manifest>
