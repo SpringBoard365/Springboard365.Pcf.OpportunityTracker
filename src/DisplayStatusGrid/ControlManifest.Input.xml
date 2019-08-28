@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Springboard365" constructor="DisplayStatusGrid" version="1.0.0" display-name-key="DisplayStatus_Display_Key" description-key="DisplayStatus_Desc_Key" control-type="standard">
+  <control namespace="Springboard365" constructor="DisplayStatusGrid" version="1.0.21" display-name-key="Status Grid" description-key="Display Statuses as Grid" control-type="standard">
     <type-group name="textTypes">
       <type>SingleLine.Text</type>
       <type>Multiple</type>
     </type-group>
-    <property name="jsonGrid" display-name-key="JsonGridProperty_Display_Key" description-key="JsonGridProperty_Desc_Key" of-type-group="textTypes" usage="bound" required="true" />    
+    <property name="jsonGrid" display-name-key="Json Field" description-key="Json Field to produce the Grid" of-type-group="textTypes" usage="bound" required="true" />
+    <property name="showRefreshButton" display-name-key="Show Refresh Button?" description-key="Yes by default. Choose NO if you want to hide the refresh button." of-type="Enum" usage="input" required="false">
+      <value name="Yes" display-name-key="Yes" description-key="Yes, show Refresh button" default="true">Yes</value>
+      <value name="No" display-name-key="No" description-key="No hide Refresh button">No</value>
+    </property>
+    <property name="globalOptionSetName" display-name-key="Global Option Set" description-key="Global Option Set of statuses to show and colors." of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="statusEntityName" display-name-key="Status Entity Name" description-key="Entity name for the Entity that holds the statuses" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="relationshipName" display-name-key="Relationship Name" description-key="Name of relationship between status and parent entity." of-type="SingleLine.Text" usage="input" required="true" /> 
+    <property name="nameFieldName" display-name-key="Header Field Name" description-key="Name of field which holds the Tracker task name." of-type="SingleLine.Text" usage="input" required="true" /> 
+    <property name="statusFieldName" display-name-key="Status Field Name" description-key="Name of field which holds the tracker task status." of-type="SingleLine.Text" usage="input" required="true" /> 
+    <property name="dateFieldName" display-name-key="Date Field Name" description-key="Name of of field which holds the tracker task date." of-type="SingleLine.Text" usage="input" required="true" /> 
+    <property name="linkFieldName" display-name-key="Link Field Name" description-key="Name of field which holds the tracker task link." of-type="SingleLine.Text" usage="input" required="true" /> 
     <resources>
       <code path="index.ts" order="1"/>
       <css path="css/main.css" order="1" />
       <resx path="strings/DisplayStatusGrid.1033.resx" version="1.0.0" />
     </resources>
+    <feature-usage>
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
   </control>
 </manifest>
